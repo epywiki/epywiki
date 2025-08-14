@@ -1,6 +1,7 @@
 # Epywiki
 
 **Epywiki** is an epidemiological wiki designed to track disease data.
+It is inspired by **epiwiki** a project by a developer who deleted their github repo and social media posts a few days after posting them . 
 
 ---
 
