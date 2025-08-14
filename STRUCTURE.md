@@ -1,4 +1,4 @@
-# Project Structure: epywiki
+## **EPYWIKI** project structure
 ```plaintext
 epywiki/
 ├── public/ # Publicly accessible folder (served by the web server)
