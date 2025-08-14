@@ -68,7 +68,7 @@ Refer to `structure.md` for the complete file structure. Key directories include
 
 ---
 ## Much thanks to 
-1.**Emanuil Rusev** for creating and maintaining  `Parsedown.php[erusev/Parsedown.php] a **single-file**, **dependency-free**, and **super-fast** markedown parser written in PHP which makes Markdown integration simple and elegant!
+1.**Parsedown authors** for creating and maintaining  `Parsedown.php[erusev/Parsedown.php] a **single-file**, **dependency-free**, and **super-fast** markedown parser written in PHP which makes Markdown integration simple and elegant!
 2.
 Thank you for helping make **Epywiki** better! Your contributions will help build a reliable, easy-to-use epidemiological wiki.
 
