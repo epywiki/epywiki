@@ -27,7 +27,7 @@ function add_disease() {
     require __DIR__ . '/../views/add_disease.php';
 }
 
-// Edit disease
+// --------------------------- EDIT DISEASE ------------------------
 function edit_disease_page() {
     if (!is_logged_in() || !is_approved()) {
         echo "Access denied.";
@@ -63,7 +63,7 @@ function edit_disease_page() {
 
 }
 
-// Delete disease
+// ----------------------------- DELETE DISEASE ------------------------------
 function delete_disease_page() {
     if (!is_logged_in() || !is_admin()) { // maybe restrict to admins
         echo "Access denied.";
@@ -81,6 +81,7 @@ function delete_disease_page() {
     redirect('index.php?page=disease_list');
 }
 
+// --------------------------- SHOW DISEASE LIST FOR EDITING OR DELETION -------------------------------
 function disease_list_page() {
     if (!is_logged_in() || !is_approved()) {
         echo "Access denied.";
@@ -91,3 +92,4 @@ function disease_list_page() {
     require __DIR__ . '/../views/disease_list.php';
 
 }
+
