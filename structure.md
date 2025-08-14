@@ -6,7 +6,6 @@ epywiki/
 │ ├── css/
 │ │ └── styles.css # Main CSS styles
 │ ├── js/
-│ │ └── password-strength.js # tai-password-strength checker
 │ ├── fonts/
 │ │ └── LibreBaskerville-italic
 │ ├── data/
@@ -44,7 +43,7 @@ epywiki/
 │ │ ├── disease_list.php
 │ │ ├── edit_disease.php
 │ │ ├── edit_epi_data.php
-│ │ ├── install_admin.php
+│ │ ├── install_admin.php #For first time installation
 │ │ ├── markdown_help.php
 │ │ └── view.php # View specific location epidemiology
 │ │
