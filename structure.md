@@ -1,5 +1,5 @@
 # Project Structure: epywiki
-'''plaintext
+```plaintext
 epywiki/
 ├── public/ # Publicly accessible folder (served by the web server)
 │ ├── index.php # Front controller (loads app/init.php, handles all requests)
