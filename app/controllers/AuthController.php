@@ -1,5 +1,4 @@
 <?php
-<?php
 /**
  *app/controllers/AuthController.php
  *
@@ -157,5 +156,6 @@ if(isset($_POST['request_reset'])){
         $message = "No editor found with this email.";
     }
 }
+
 
 
