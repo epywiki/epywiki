@@ -1,28 +1,52 @@
-## Epywiki
+# Epywiki
+
+**Epywiki** is an epidemiological wiki designed to track disease data.
+
 ---
-**Epywiki** is an epidemiological wiki
 
-Currently it only supports *Kenya* as I found it easier to use a geographical location i understood best.
+## Overview
 
-The site uses vanilla **CSS** , **JS** ,**PHP** and **SQLITE** for portability.
+- Currently, the site only supports **Kenya**, as I focused on a geographical location I understood best.
+- Built with **vanilla CSS**, **JavaScript**, **PHP**, and **SQLite** for simplicity and portability.
+- Download the repository from GitHub and install it in `htdocs` (for Windows).
 
-Download the files from github and install in htdocs for windows.
+## Users & Roles
 
-The user who sets up first becomes the admin and can add other users as editors.
+- The first user to set up the site becomes the **admin**.
+- Admins can add other users as **editors**.
+- Editors can add diseases and assign it to various wards in Kenya.
 
-Editors can add various diseases which are sorted alphabetically , but can only toggle upto the various wards in Kenya.
+### Login System
 
-The user loggin system is quirky and apologies for that as i have not found a lightweight practical solution of implementing it but currently, when an user wants to become an editor they submit their username and email. The admin then approves , then sends them a link which they use to finish setting up their account and establish their password which they can use to login.
+The login system works as follows:
 
-The epidemiological data used for the site is : cases, deaths, report data and notes. Notes are added through markdown as i found it to be the best format for the references and useful data.
+1. Users submit a request to become editors (username and email).
+2. Admin approves the request.
+3. Admin sends a **set-password link** to the user.
+4. Users finish setting up their account and establish a password.
+5. Users can then use their emails and passwords to login.
+6. The forgot password logic hasnt been implemented.
 
-To make it a complete wiki some features like version control, user account and talks are still needed. 
+> Note: The system is not in its final stages and doesnt work as expected.Comments and contributions are highly welcomed.
 
-Most importantly the site needs to support various locations apart from kenya , i found it difficult to set up other countries as i do not understand their administrative divisions and that unlike kenya i could not identify the threshold of ease of development and data accuracy.
+## Epidemiological Data
 
-Another problem about the location is that because this project is still in its early stages and i wanted a simple structure which many would find easy and easy to contribute.
+- Data tracked includes **cases**, **deaths**, **report dates**, and **notes**.
+- Notes use **Markdown** for references and structured data.
 
+## Limitations & Future Work
 
+- Version control, discussion/talk pages, and richer user accounts are not yet implemented.
+- Currently supports only Kenya due to familiarity with administrative divisions.
+- Expanding to other countries requires understanding their local administrative structures and data accuracy thresholds.
 
-Apologies for the simplicity and bugs as its in the early stages 
+## Contributing
+
+- The project structure is simple to encourage easy contributions.
+- Early-stage project: expect bugs and limited features.
+
+---
+
+Thank you for exploring **Epywiki**. Contributions and suggestions are welcome!
+
 
