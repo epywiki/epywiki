@@ -1,6 +1,6 @@
 <?php
 //app/controllers/EpiDataController.php
-
+// --------------------------- Add a new disease report ---------------------------
 function add_disease_report_page() {
     if (!is_logged_in() || !is_approved()) {
         echo "Access denied.";
@@ -56,3 +56,4 @@ function edit_epi_data_page() {
 
     require __DIR__ . '/../views/edit_epi_data.php'; // ✅ Fixed
 }
+
