@@ -1,6 +1,41 @@
 <?php
-//app/controllers/AuthController.php
-//-------------------------- INSTALL ADMIN ----------------------------------
+<?php
+/**
+ *app/controllers/AuthController.php
+ *
+ * This controller handles all authentication-related functionality in the epywiki project.
+ * 
+ * Main responsibilities:
+ * 1. Installing the first admin account (install_admin_page)
+ *    - Sets up the initial admin user during first-time setup.
+ *    - Stores user info in the database and initializes session variables.
+ *
+ * 2. User login (login_page)
+ *    - Handles normal user login.
+ *    - Processes editor requests: users can submit a request to become an editor,
+ *      which must be approved by the admin.
+ *    - Maintains session information for logged-in users.
+ *
+ * 3. Account management (account_page)
+ *    - Allows logged-in users to update their passwords.
+ *
+ * Notes:
+ * - This file is part of a custom, vanilla PHP MVC structure.
+ * - Session management is handled here in conjunction with `init.php`.
+ * - Passwords are hashed using PHP's `password_hash()` for security.
+ * - Editor approval and account setup flow is designed to be manual: the admin approves requests
+ *   and provides users with a link to set their password.
+ *
+ * Usage:
+ * Include this controller in your routing (`web.php`) and call the appropriate function based on the request:
+ *   - install_admin_page()
+ *   - login_page()
+ *   - account_page()
+ *
+ * Author: [Your Name or "Epywiki Team"]
+ * Date: [YYYY-MM-DD]
+ */
+
 function install_admin_page() {
    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
@@ -122,4 +157,5 @@ if(isset($_POST['request_reset'])){
         $message = "No editor found with this email.";
     }
 }
+
 
