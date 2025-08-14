@@ -73,7 +73,7 @@ Refer to `structure.md` for the complete file structure. Key directories include
    For creating and maintaining [`Parsedown.php`](https://github.com/erusev/parsedown) — a **single-file**, **dependency-free**, and **super-fast** Markdown parser written in PHP. It makes Markdown integration simple and elegant!
 
 2. **kenya-administrative-divisions author**  
-   I would like to extend o sincere appreciation to the developer who contributed the comprehensive dataset of Kenyan counties, subcounties, and wards in JSON format. This invaluable resource has significantly enhanced the accuracy and usability of our project. Your dedication to making this data freely available is deeply appreciated.  
+   I would like to extend my sincere appreciation to the developer who contributed the comprehensive dataset of Kenyan counties, subcounties, and wards in JSON format. This invaluable resource has significantly enhanced the accuracy and usability of our project. Your dedication to making this data freely available is deeply appreciated.  
    You can explore the dataset here: [Kenya Administrative Divisions - county.json](https://github.com/michaelnjuguna/kenya-administrative-divisions/blob/main/county.json)
 
 
