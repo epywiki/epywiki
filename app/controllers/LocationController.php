@@ -29,7 +29,7 @@ function add_location() {
         }
     }
 
-    // ✅ Corrected path
+    //  Corrected path
     require __DIR__ . '/../views/add_location.php';
 }
 
@@ -93,4 +93,5 @@ function get_all_wards_with_hierarchy() {
         ORDER BY w.name ASC
     ");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 }
