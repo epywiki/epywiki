@@ -1,7 +1,7 @@
 <?php
 // app/models/Database.php
 /**
- * This file creates the tables for the sqlite database that comes bundled with epiwiki
+ * This file creates the tables for the sqlite database that comes bundled with epywiki
  * 
  * 
  */
@@ -72,3 +72,4 @@ function create_tables() {
         );
     ");
 }
+
