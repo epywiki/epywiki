@@ -28,7 +28,7 @@ The login system works as follows:
 5. Users can then use their emails and passwords to login.
 6. The forgot password logic hasnt been implemented.
 
-> Note: The system is not in its final stages and doesnt work as expected.Comments and contributions are highly welcomed.
+> Note: The system is in its early stages and doesnt work as expected.Comments and contributions are highly welcomed.
 
 ## Epidemiological Data
 
