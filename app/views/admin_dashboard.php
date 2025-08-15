@@ -2,7 +2,7 @@
 //app/views/admin_dashboard.php
 include 'header.php'; 
 ?>   
-<div id="editors_and_admins"> 
+<div> 
 <div class="container">
     <h1>Admin Dashboard</h1>
     <h2>User Management</h2>
@@ -104,3 +104,4 @@ include 'header.php';
 
 <body>
 </html>    
+
