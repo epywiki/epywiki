@@ -21,7 +21,7 @@ include 'header.php'; ?>
             </select>
 
             <?php if (is_logged_in() && is_approved()): ?>
-                <p><a href="index.php?page=disease_list">Manage Diseases</a></p>
+                <p><a href="?page=disease_list">Manage Diseases</a></p>
             <?php endif; ?>
         </form>
         <br>
@@ -113,3 +113,4 @@ include 'header.php'; ?>
         <button type="submit" name="add_epi_data">Save Data</button>
     </form>
 </div>
+
