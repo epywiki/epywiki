@@ -2,7 +2,7 @@
 //app/views/add_location.php
 include 'header.php'; ?>
 <h2>Add Location</h2>
-<p>Select a county, constituency, and ward. You can also add deeper levels later.</p>
+<p>Select a county, constituency, and ward. Support for other countries will be added later</p>
 
 <form method="post" action="">
     <label>County:</label>
@@ -83,3 +83,4 @@ include 'header.php'; ?>
     .catch(err => console.error("Error loading JSON:", err));
 
 </script>    
+
