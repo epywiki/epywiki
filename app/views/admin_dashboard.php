@@ -40,16 +40,7 @@ include 'header.php';
     
 
 <div class="container">
-    <h1>Admin Dashboard</h1>
-    <h2>User Management</h2>
-
-    <!-- Add new user form -->
-    <h3>Add New Editor</h3>
-    <form method="post" style="margin-bottom: 2em;">
-        <label>Email: <input type="email" name="new_email" required></label>
-        <label>Password: <input type="password" name="new_password" required></label>
-        <button type="submit" name="add_user">Add Editor</button>
-    </form>
+    
 
     <!-- Pending requests -->
     <h3>Pending Editor Requests</h3>
@@ -104,4 +95,5 @@ include 'header.php';
 
 <body>
 </html>    
+
 
