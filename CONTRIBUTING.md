@@ -41,9 +41,12 @@ Refer to `structure.md` for the complete file structure. Key directories include
 
 1. **Fork the repository** and create a new branch for your feature or bugfix.
 2. **Clone** your forked repository locally.
-3. Make your changes following the project’s **MVC structure**.
-4. Test your changes thoroughly.
-5. Submit a **pull request** with a clear description of your changes.
+3. 4.Using XAMMP(windows) extract and upload the zip folder into the `htdocs` folder.
+4. Create a new folder called `epywiki`.
+5. In the browser search for `localhost/epywiki/epwywiki-main/public`
+6. Make your changes following the project’s **MVC structure**.
+7. Test your changes thoroughly.
+8. Submit a **pull request** with a clear description of your changes.
 
 ---
 
