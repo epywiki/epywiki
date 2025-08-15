@@ -55,6 +55,7 @@ Refer to `structure.md` for the complete file structure. Key directories include
 - **UI/UX:** Enhance the frontend experience using CSS/JS.
 - **Data Handling:** Improve epidemiological data input and reporting.
 - **Documentation:** Improve `README.md`, code comments, and setup instructions.
+- **Clean routing:** Improve the files and help remove the `index.php?` route for every page without apache_rewrite and interference with core files.
 
 ---
 
