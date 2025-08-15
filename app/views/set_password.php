@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         // Update the user's password in DB
         update_user_password($user_id, $password);
-        $message = "Password set successfully! You can now <a href='index.php?page=login'>login</a>.";
+        $message = "Password set successfully! You can now <a href='?page=login'>login</a>.";
     }
 }
 ?>
@@ -54,3 +54,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </div>
+
