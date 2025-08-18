@@ -40,7 +40,7 @@ The login system works as follows:
 - Version control, discussion/talk pages, and richer user accounts are not yet implemented.
 - Currently supports only Kenya due to familiarity with administrative divisions.
 - Expanding to other countries requires understanding their local administrative structures and data accuracy thresholds.
-- Clean routing is challenging without editing core files so all routes currently use the `index.php?` route.
+- Clean routing is challenging without editing core files so all routes currently use the `index.php?` path.
 
 ## Contributing
 
