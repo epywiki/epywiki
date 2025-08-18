@@ -20,9 +20,13 @@
         
         <label>Password (min 6 chars)</label>
         <input type="password" name="password" minlength="6" required>
-        
-        <button type="submit">Create Admin</button>
+
+        <p>To avoid any person from accidentally adding their details in this demo , i have disabled the submit button</p>
+       <!--
+       <button type="submit">Create Admin</button>
+        -->
     </form>
 </div>
 </body>
 </html>
+
