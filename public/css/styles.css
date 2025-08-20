@@ -1,7 +1,7 @@
 /* =========================
    EpyWiki Styles 
-   --wp-blue : // wordpress blue
-   --spotify-green : //spotify green
+   --epy-blue : // primary EpyWiki blue
+   --epy-green : // primary EpyWiki green
    ========================= */
 
 @font-face {
@@ -14,8 +14,8 @@
 
 /* Root Variables */
 :root {
-  --wp-blue: #2271b1;
-  --spotify-green: #1db954;
+  --epy-blue: #2271b1;
+  --epy-green: #1db954;
   --dark-bg: #121212;
   --light-bg: #f9f9f9;
   --text-dark: #222;
@@ -77,7 +77,7 @@ h1 {
 }
 
 .header-nav a:hover, nav a:hover {
-  color: var(--spotify-green);
+  color: var(--epy-green);
 }
 
 /* Sidebar */
@@ -100,7 +100,7 @@ footer {
 
 /* Buttons */
 button, .btn {
-  background-color: var(--spotify-green);
+  background-color: var(--epy-green);
   color: var(--text-light);
   border: none;
   padding: 0.6rem 1rem;
@@ -134,7 +134,7 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
-  border-color: var(--wp-blue);
+  border-color: var(--epy-blue);
   box-shadow: 0 0 0 2px rgba(34,113,177,0.2);
   outline: none;
 }
@@ -155,7 +155,7 @@ th, td {
 }
 
 th {
-  background: var(--wp-blue);
+  background: var(--epy-blue);
   color: var(--text-light);
 }
 
@@ -236,3 +236,4 @@ article p {
     padding: 0.5rem;
   }
 }
+
