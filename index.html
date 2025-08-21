@@ -1,24 +1,49 @@
 <!DOCTYPE html>
-<!-- This index.html is for the docsify documentation for my site -->
-<html>
+<!-- Docsify entry file for EpyWiki Documentation -->
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>EpyWiki Docs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Theme (choose one: vue.css, buble.css, dark.css, pure.css) -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>EpyWiki Documentation</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="EpyWiki documentation site built with Docsify." />
+  <meta name="author" content="EpyWiki Team" />
+
+  <!-- Docsify Theme (options: vue.css, buble.css, dark.css, pure.css) -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" />
+  
+  <!-- Optional: Syntax highlighting for code blocks -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
 </head>
 <body>
-  <div id="app">Loading...</div>
+  <!-- App container -->
+  <div id="app">Loading EpyWiki Docs...</div>
+
+  <!-- Docsify Config -->
   <script>
     window.$docsify = {
-      name: 'EpyWiki',
+      name: '📘 EpyWiki Docs',
       repo: 'https://github.com/epywiki/epywiki',
       loadSidebar: true,
-      subMaxLevel: 2,
-      loadNavbar: true
+      subMaxLevel: 3, // show deeper nested headings in sidebar
+      loadNavbar: true,
+      coverpage: true, // optional: add a coverpage (_coverpage.md)
+      search: 'auto',  // enable search if plugin included
+      ga: '',          // Google Analytics code if needed
     }
   </script>
+
+  <!-- Docsify Core -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+
+  <!-- Plugins -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-php.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
 </body>
 </html>
