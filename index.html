@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>EpyWiki</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 { color: #2c3e50; }
-    p { line-height: 1.6; }
-  </style>
+  <title>EpyWiki Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Theme (choose one: vue.css, buble.css, dark.css, pure.css) -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
 </head>
 <body>
-  <h1>Welcome to EpyWiki</h1>
-  <p>This is a test of a single-page inline HTML/CSS/JS site hosted on GitHub Pages.</p>
-
-  <button onclick="alert('Hello from EpyWiki!')">Click Me</button>
+  <div id="app">Loading...</div>
+  <script>
+    window.$docsify = {
+      name: 'EpyWiki',
+      repo: 'https://github.com/epywiki/epywiki',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      loadNavbar: true
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
 </html>
