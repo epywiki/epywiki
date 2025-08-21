@@ -1,4 +1,4 @@
 * [Home](/)
-* [Getting Started](CONTRIBUTING.md)
-* [FAQ](faq.md)
-## well 
+* [CONTRIBUTIONS](CONTRIBUTING.md)
+* [STRUCTURE](STRUCTURE.md)
+
