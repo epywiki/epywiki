@@ -9,7 +9,7 @@ It is inspired by **epiwiki** a project by a developer who deleted their github 
 
 - Currently, the site only supports **Kenya**, as I focused on a geographical location I understood best.
 - Built with **vanilla CSS**, **JavaScript**, **PHP**, and **SQLite** for simplicity and portability.
-- Download the repository from GitHub and install it in `htdocs` (for Windows).
+- Download the repository from GitHub and install it in `xampp/htdocs` (for Windows).
 
 ## Users & Roles
 
