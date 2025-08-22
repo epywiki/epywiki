@@ -7,7 +7,7 @@ It is inspired by **epiwiki** a project by a developer who deleted their github 
 
 ## Overview
 
-- Currently, the site only supports **Kenya**, as I focused on a geographical location I understood best.
+- Currently, the site uses open street map and nominatim
 - Built with **vanilla CSS**, **JavaScript**, **PHP**, and **SQLite** for simplicity and portability.
 - Download the repository from GitHub and install it in `xampp/htdocs` (for Windows).
 
@@ -38,7 +38,8 @@ The login system works as follows:
 ## Limitations & Future Work
 
 - Version control, discussion/talk pages, and richer user accounts are not yet implemented.
-- Currently supports only Kenya due to familiarity with administrative divisions.
+- Currently uses `osm` and `nominatim` but improvements are needed to improve location accuracy.
+- Initially the site was to be a way for volunteers to add their own data but it will only be feasible if we use secondary data.
 - Expanding to other countries requires understanding their local administrative structures and data accuracy thresholds.
 - Clean routing is challenging without editing core files so all routes currently use the `index.php?` path.
 
