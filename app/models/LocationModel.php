@@ -1,6 +1,8 @@
 <?php
 // app/models/LocationModel.php
 require_once __DIR__ . '/Database.php';
+require_once __DIR__ . '/../config.php'; // for get_db() if needed
+
 
 function add_location_to_db($name, $type, $parent_id = null) {
     $stmt = get_db()->prepare("INSERT INTO locations (name, type, parent_id) VALUES (?, ?, ?)");
@@ -14,9 +16,6 @@ function get_all_locations() {
     $stmt = $db->query("SELECT id, name, type, parent_id, latitude, longitude FROM locations");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
-
-
 
 
 function get_child_locations($parent_id) {
@@ -40,3 +39,17 @@ function get_location_id_by_name($name, $parent_id = null) {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result ? $result['id'] : null;
 }
+
+
+function add_location($data) {
+    $db = get_db();
+    $stmt = $db->prepare("INSERT INTO locations (country, level1, level2, level3) VALUES (?, ?, ?, ?)");
+    $stmt->execute([
+        $data['country'],
+        $data['levels']['level1'] ?? null,
+        $data['levels']['level2'] ?? null,
+        $data['levels']['level3'] ?? null
+    ]);
+    return $db->lastInsertId();
+}
+
