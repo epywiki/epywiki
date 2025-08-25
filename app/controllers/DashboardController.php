@@ -25,7 +25,7 @@ function dashboard_page() {
 // ------------------------- ADMIN DASHBOARD -------------------------
 function admin_dashboard_page() {
     if (!is_logged_in() || !is_admin()) {
-        //echo "Access denied.";
+        
         set_flash_message("Access denied.", "error");
         return;
     }

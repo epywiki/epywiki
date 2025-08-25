@@ -1,55 +1,54 @@
 <?php
 // app/models/LocationModel.php
 require_once __DIR__ . '/Database.php';
-require_once __DIR__ . '/../config.php'; // for get_db() if needed
-
-
-function add_location_to_db($name, $type, $parent_id = null) {
-    $stmt = get_db()->prepare("INSERT INTO locations (name, type, parent_id) VALUES (?, ?, ?)");
-    $stmt->execute([$name, $type, $parent_id]);
-    return get_db()->lastInsertId();
-}
-
-// fetches all locations added in add_location.php thanks to nominatim.org and osm . public/js/map.js
-function get_all_locations() {
-    $db = get_db();
-    $stmt = $db->query("SELECT id, name, type, parent_id, latitude, longitude FROM locations");
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-
-function get_child_locations($parent_id) {
-    $stmt = get_db()->prepare("SELECT * FROM locations WHERE parent_id = ?");
-    $stmt->execute([$parent_id]);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-// Get a location's ID by its name (and optionally its parent_id). 
-function get_location_id_by_name($name, $parent_id = null) {
-    $db = get_db();
-
-    if ($parent_id) {
-        $stmt = $db->prepare("SELECT id FROM locations WHERE name = :name AND parent_id = :parent_id LIMIT 1");
-        $stmt->execute([':name' => $name, ':parent_id' => $parent_id]);
-    } else {
-        $stmt = $db->prepare("SELECT id FROM locations WHERE name = :name LIMIT 1");
-        $stmt->execute([':name' => $name]);
-    }
-
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result ? $result['id'] : null;
-}
-
+require_once __DIR__ . '/../config.php';
 
 function add_location($data) {
     $db = get_db();
-    $stmt = $db->prepare("INSERT INTO locations (country, level1, level2, level3) VALUES (?, ?, ?, ?)");
+    $stmt = $db->prepare("
+        INSERT INTO locations (country, level1, level2, level3)
+        VALUES (?, ?, ?, ?)
+    ");
     $stmt->execute([
         $data['country'],
-        $data['levels']['level1'] ?? null,
-        $data['levels']['level2'] ?? null,
-        $data['levels']['level3'] ?? null
+        $data['level1'] ?? null,
+        $data['level2'] ?? null,
+        $data['level3'] ?? null
     ]);
     return $db->lastInsertId();
 }
 
+function get_all_locations() {
+    $db = get_db();
+    $stmt = $db->query("SELECT * FROM locations");
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function get_location($id) {
+    $db = get_db();
+    $stmt = $db->prepare("SELECT * FROM locations WHERE id = ?");
+    $stmt->execute([$id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function update_location($id, $data) {
+    $db = get_db();
+    $stmt = $db->prepare("
+        UPDATE locations 
+        SET country = ?, level1 = ?, level2 = ?, level3 = ?
+        WHERE id = ?
+    ");
+    return $stmt->execute([
+        $data['country'],
+        $data['level1'] ?? null,
+        $data['level2'] ?? null,
+        $data['level3'] ?? null,
+        $id
+    ]);
+}
+
+function delete_location($id) {
+    $db = get_db();
+    $stmt = $db->prepare("DELETE FROM locations WHERE id = ?");
+    return $stmt->execute([$id]);
+}

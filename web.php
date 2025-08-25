@@ -5,115 +5,73 @@
  */
 require_once __DIR__ . '/app/init.php';
 
-
 // Load router (in public/Router.php)
 require_once __DIR__ . '/public/Router.php';
 
 $router = new \Bramus\Router\Router();
 
-//==================ROUTES====================\\
+// ================== LOAD CONTROLLERS ================== //
+require_once __DIR__ . '/app/controllers/AuthController.php';
+require_once __DIR__ . '/app/controllers/DiseaseController.php';
+require_once __DIR__ . '/app/controllers/LocationController.php';
+require_once __DIR__ . '/app/controllers/ReportController.php';
+
+
+// ================== ROUTES ================== //
 
 // Install admin
-$router->get('/install_admin', function () {
-    install_admin_page();
-});
-$router->post('/install_admin', function () {
-    install_admin_page();
-});
+$router->match('GET|POST', '/install_admin', 'install_admin_page');
 
 // Home
-$router->get('/', function () {
-    home_page();
+$router->get('/home', function () {
+    require __DIR__ . '/app/views/home.php';
 });
+$router->get('/', 'home_page');
 
 // Login
-$router->get('/login', function () {
-    login_page();
-});
-$router->post('/login', function () {
-    login_page(); // Or your login form handler
-});
+$router->match('GET|POST', '/login', 'login_page');
 
 // Dashboard (editor)
-$router->get('/dashboard', function () {
-    dashboard_page();
-});
+$router->get('/dashboard', 'dashboard_page');
 
+// Admin dashboard
+$router->match('GET|POST', '/admin_dashboard', 'admin_dashboard_page');
 
-// Admin dashboard (GET & POST)
-$router->match('GET|POST', '/admin_dashboard', function () {
-    admin_dashboard_page();
-});
+// Diseases
+$router->match('GET|POST', '/add_disease', 'add_disease');
+$router->get('/disease_list', 'disease_list_page');
+$router->match('GET|POST', '/edit_disease', 'edit_disease_page');
+$router->get('/delete_disease', 'delete_disease_page');
 
+// Locations
+$router->match('GET|POST', '/locations/add', 'add_location_page');
+$router->get('/locations/edit/(\d+)', 'edit_location_page');
+$router->post('/locations/update/(\d+)', 'update_location_action');
+$router->post('/locations/delete/(\d+)', 'delete_location_action');
 
-// Add disease
-$router->get('/add_disease', function () {
-    add_disease();
-});
-$router->post('/add_disease', function () {
-    add_disease(); // handle form submit
-});
-
-
-// Add location (GET + POST)
-$router->match('GET|POST', '/locations/add', function () {
-    require_once __DIR__ . '/app/controllers/LocationController.php';
-    add_location_page();
-});
-
-
-
-// Edit epi data
-$router->get('/edit_epi_data', function () {
-    edit_epi_data_page();
-});
+// Epi Data
+$router->match('GET|POST', '/add_epi_data', 'add_epi_data_page');
+$router->get('/edit_epi_data', 'edit_epi_data_page');
 
 // Markdown help
 $router->get('/markdown_help', function () {
     require __DIR__ . '/app/views/markdown_help.php';
 });
 
-// Disease list
-$router->get('/disease_list', function () {
-    disease_list_page();
-});
+// Forgot password
+$router->match('GET|POST', '/forgot_password', 'request_reset_page');
 
-// Edit disease
-$router->get('/edit_disease', function () {
-    edit_disease_page();
-});
-$router->post('/edit_disease', function () {
-    edit_disease_page(); // save changes
-});
+// Reports
+$router->get('/reports', 'list_reports_page');
+$router->get('/reports/create', 'create_report_page');
+$router->post('/reports/store', 'store_report_action');
+$router->get('/reports/(\d+)', 'view_report_page');       // ensure function exists
+$router->get('/reports/(\d+)/edit', 'edit_report_page');  // ensure function exists
+$router->post('/reports/(\d+)/update', 'update_report_action'); // ensure function exists
+$router->post('/reports/(\d+)/delete', 'delete_report_action'); // ensure function exists
 
-// Delete disease
-$router->get('/delete_disease', function () {
-    delete_disease_page();
-});
-
-/* Forgot password
-$router->get('/forgot_password', function () {
-    require __DIR__ . '/app/views/forgot_password.php';
-});
-*/
-$router->get('/forgot_password', function () {
-    request_reset_page();
-});
-$router->post('/forgot_password', function () {
-    request_reset_page();
-});
-$router->get('/add_epi_data', function() {
-    require_once __DIR__ . '/app/controllers/EpiDataController.php';
-    add_epi_data_page();  // the function we just created
-});
-
-$router->post('/add_epi_data', function() {
-    require_once __DIR__ . '/app/controllers/EpiDataController.php';
-    add_epi_data_page();  // handles the form POST
-});
-
-// 404 handler
-$router->set404(function() {
+// ================== 404 Handler ================== //
+$router->set404(function () {
     http_response_code(404);
     echo "404 - Page not found";
 });

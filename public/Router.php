@@ -1,5 +1,5 @@
 <?php
-//public/Router.php
+//public/router.php
 /**
  * @author      Bram(us) Van Damme <bramus@bram.us>
  * @copyright   Copyright (c), 2013 Bram(us) Van Damme
@@ -538,5 +538,4 @@ class Router
     {
         $this->serverBasePath = $serverBasePath;
     }
-
 }
