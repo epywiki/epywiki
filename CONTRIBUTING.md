@@ -76,7 +76,7 @@ Refer to `structure.md` for the complete file structure. Key directories include
 1. **Parsedown authors**  
    For creating and maintaining [`Parsedown.php`](https://github.com/erusev/parsedown) — a **single-file**, **dependency-free**, and **super-fast** Markdown parser written in PHP. It makes Markdown integration simple and elegant!
 
-2. **Bramus router author** - For clean routing for more details go to [`Bramus router`](https:github.com/)
+2. **Bramus router author** - For clean routing for more details go to [`Bramus router`](https:github.com/bramus/router)
  
 
 Thank you for helping make **Epywiki** better! Your contributions will help build a reliable, easy-to-use epidemiological wiki.
