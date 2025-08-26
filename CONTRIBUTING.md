@@ -23,8 +23,8 @@ Refer to `structure.md` for the complete file structure. Key directories include
 
 - `public/` – Publicly accessible files, front controller (`index.php`), CSS, JS, images, fonts, and data files.
 - `app/` – Core application files:
-  - `controllers/` – Handles application logic (Auth, Dashboard, Disease, EpiData, Location, Home)
-  - `models/` – Database and data models (User, Disease, EpiData, Location)
+  - `controllers/` – Handles application logic (Auth, Dashboard, Disease, Report, Location, Home)
+  - `models/` – Database and data models (User, Disease, Report, Location)
   - `views/` – Templates for HTML/PHP pages (login, dashboards, forms, reports)
   - `config.php` – Configuration and DB connection
   - `functions.php` – Helper functions
@@ -43,7 +43,7 @@ Refer to `structure.md` for the complete file structure. Key directories include
 2. **Clone** your forked repository locally.
 3. 4.Using XAMMP(windows) extract and upload the zip folder into the `htdocs` folder.
 4. Create a new folder called `epywiki`.
-5. In the browser search for `localhost/epywiki/epwywiki-main/public`
+5. In the browser search for `localhost/epywiki/epwywiki/public`
 6. Make your changes following the project’s **MVC structure**.
 7. Test your changes thoroughly.
 8. Submit a **pull request** with a clear description of your changes.
@@ -52,7 +52,7 @@ Refer to `structure.md` for the complete file structure. Key directories include
 
 ## Areas Where Help Is Needed
 
-- **Location Support:** Extend beyond Kenya and manage multiple countries’ administrative divisions.
+- **Location Support:** The current location divisions is based on simple administrative divisions.
 - **User System:** Improve account management, login, and editor workflows.
 - **Version Control for Wiki Pages:** Track edits and revisions.
 - **UI/UX:** Enhance the frontend experience using CSS/JS.
@@ -76,7 +76,7 @@ Refer to `structure.md` for the complete file structure. Key directories include
 1. **Parsedown authors**  
    For creating and maintaining [`Parsedown.php`](https://github.com/erusev/parsedown) — a **single-file**, **dependency-free**, and **super-fast** Markdown parser written in PHP. It makes Markdown integration simple and elegant!
 
-2. **Bramus router author**  
+2. **Bramus router author** - For clean routing
  
 
 Thank you for helping make **Epywiki** better! Your contributions will help build a reliable, easy-to-use epidemiological wiki.
