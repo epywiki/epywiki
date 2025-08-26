@@ -9,6 +9,7 @@
 function add_disease() {
     if (!is_logged_in() || !is_approved()) {
         set_flash_message("You must be logged in and approved to add diseases.", "error");
+        redirect(BASE_URL . '/home');
         return;
     }
 
@@ -69,8 +70,9 @@ function edit_disease_page() {
 
 // ----------------------------- DELETE DISEASE ------------------------------
 function delete_disease_page() {
-    if (!is_logged_in() || !is_admin()) { // maybe restrict to admins
-        set_flash_message("Access denied.", "error");
+    if (!is_logged_in() || !is_admin()) { 
+        set_flash_message("Only the admin can delete diseases.", "error");
+        redirect(BASE_URL . '/home');
         return;
     }
 

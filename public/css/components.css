@@ -4,19 +4,21 @@
 
 /* Buttons */
 button, .btn {
-  background-color: var(--epy-green);
-  color: var(--text-light);
-  border: none;
-  padding: 0.6rem 1rem;
+  background: transparent;
+  border: 1px solid var(--epy-blue);
+  color: var(--epy-blue);
+  padding: 0.5rem 0.9rem;
   border-radius: var(--radius);
   cursor: pointer;
-  font-weight: 600;
-
+  font-weight: 200;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover, .btn:hover {
-  background-color: #17a94a;
+  background: var(--epy-blue);
+  color: white;
 }
+
 
 /* Forms */
 form {
@@ -91,4 +93,31 @@ article p {
     font-size: 0.9em;
     opacity: 0.7;
     margin-left: 5px;
+}
+
+.report-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.report-card h3 {
+  margin-top: 0;
+  color: var(--epy-blue);
+}
+
+input[type="search"] {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+}
+
+.btn-small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
 }

@@ -59,3 +59,15 @@ function delete_location_action($id) {
     header("Location: " . BASE_URL . "/");
     exit;
 }
+
+// --------------------------- SHOW LOCATION LIST FOR EDITING OR DELETION -------------------------------
+function location_list_page() {
+    if (!is_logged_in() || !is_approved()) {
+        set_flash_message("Access denied.", "error");
+        return;
+    }
+
+    $locations = get_all_locations();
+    require __DIR__ . '/../views/locations/location_list.php';
+
+}

@@ -1,20 +1,17 @@
 <!-- app/views/diseases/edit_disease.php -->
-<?php require __DIR__ . '/../partials/header.php'; ?>
+<?php include __DIR__ . '/../partials/header.php'; ?>
 
 <h2>Edit Disease</h2>
+<form method="POST" action="">
+    <label>Name:</label>
+    <input type="text" name="name" value="<?= htmlspecialchars($disease['name']) ?>" required>
+    <br>
 
-<form method="POST" action="<?= BASE_URL ?>/edit_disease?id=<?= htmlspecialchars($disease['id']) ?>">
-    <div>
-        <label for="name">Disease Name:</label>
-        <input type="text" name="name" id="name" value="<?= htmlspecialchars($disease['name']) ?>" required>
-    </div>
+    <label>Description:</label>
+    <textarea name="description"><?= htmlspecialchars($disease['description']) ?></textarea>
+    <br>
 
-    <div>
-        <label for="description">Description:</label>
-        <textarea name="description" id="description"><?= htmlspecialchars($disease['description']) ?></textarea>
-    </div>
-
-    <button type="submit">Update Disease</button>
+    <button type="submit">Update</button>
 </form>
 
-<?php require __DIR__ . '/../partials/footer.php'; ?>
+<?php include __DIR__ . '/../partials/footer.php'; ?>

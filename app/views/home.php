@@ -1,115 +1,70 @@
 <?php 
-include __DIR__ . '/../views/partials/header.php';
+//app/views/home.php
+
 $Parsedown = new Parsedown();
-?>
 
-<a href="<?= BASE_URL ?>/locations/add">Add Location</a> |
-<a href="<?= BASE_URL ?>/add_disease">Add Disease</a>
-
-<!-- ================= LOCATIONS ================== -->
-<h2>Existing Locations</h2>
-
-<?php if (!empty($locations)): ?>
-    <table border="1" cellpadding="5">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Country</th>
-                <th>Level 1</th>
-                <th>Level 2</th>
-                <th>Level 3</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($locations as $loc): ?>
-            <tr>
-                <td><?= $loc['id'] ?? '' ?></td>
-                <td><?= htmlspecialchars($loc['country'] ?? '') ?></td>
-                <td><?= htmlspecialchars($loc['level1'] ?? '') ?></td>
-                <td><?= htmlspecialchars($loc['level2'] ?? '') ?></td>
-                <td><?= htmlspecialchars($loc['level3'] ?? '') ?></td>
-                <td>
-                    <a href="<?= BASE_URL ?>/locations/edit/<?= $loc['id'] ?>">Edit</a> | 
-                    <form action="<?= BASE_URL ?>/locations/delete/<?= $loc['id'] ?>" method="POST" style="display:inline;">
-                        <button type="submit" onclick="return confirm('Delete this location?');">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-<?php else: ?>
-    <p>No locations added yet.</p>
-<?php endif; ?>
-
-
-<!-- ================= DISEASES ================== -->
-<h2>Existing Diseases</h2>
-
-<?php if (!empty($diseases)): ?>
-    <table border="1" cellpadding="5">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($diseases as $d): ?>
-            <tr>
-                <td><?= $d['id'] ?? '' ?></td>
-                <td><?= htmlspecialchars($d['name'] ?? '') ?></td>
-                <td><?= htmlspecialchars($d['description'] ?? '') ?></td>
-                <td>
-                    <a href="<?= BASE_URL ?>/edit_disease?id=<?= $d['id'] ?>">Edit</a> | 
-                    <a href="<?= BASE_URL ?>/delete_disease?id=<?= $d['id'] ?>" 
-                       onclick="return confirm('Delete this disease?');">Delete</a>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-<?php else: ?>
-    <p>No diseases added yet.</p>
-<?php endif; ?>
-
-<!-- ================= REPORTS ================== -->
-<h2>Reports</h2>
-<a href="<?= BASE_URL ?>/reports/create">Add Report</a> |
-<a href="<?= BASE_URL ?>/reports">View All Reports</a>
-
-
+include __DIR__ . '/../views/partials/header.php'; ?>
 <div class="container">
-    <h2>Reports</h2>
-    <a href="<?= BASE_URL ?>/reports/create">+ Create New Report</a>
+  <div class="grid-container">
+    
+    <!-- Sidebar (compact) -->
+    <aside class="grid-left">
+      <h3>Quick Actions</h3>
+      <a href="<?= BASE_URL ?>/locations/add" class="btn">+ Location</a>
+      <a href="<?= BASE_URL ?>/add_disease" class="btn">+ Disease</a>
 
-    <?php if (!empty($reports)): ?>
-        <ul>
-            <?php foreach ($reports as $report): ?>
-                <li>
-    <strong><?= htmlspecialchars($report['disease_name']) ?></strong>
-    <p>Description: <?= htmlspecialchars($report['disease_description']) ?></p>
-    <p>Location: <?= htmlspecialchars($report['country'] . ' ' . $report['level1'] . ' ' . $report['level2'] . ' ' . $report['level3']) ?></p>
-    <p>Report: <?= $Parsedown->text($report['content_md']) ?></p>
+      <!-- Search Diseases -->
+      <h4>Diseases</h4>
+      <input type="search" placeholder="Search diseases..." onkeyup="filterTable('diseaseTable', this.value)">
+      <table id="diseaseTable">
+        <tbody>
+          <?php foreach (array_slice($diseases, 0, 5) as $d): ?>
+          <tr>
+            <td><?= htmlspecialchars($d['name']) ?></td>
+            <td><a href="<?= BASE_URL ?>/edit_disease/<?= $d['id'] ?>">Edit</a></td>
+          </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+      <a href="<?= BASE_URL ?>/disease_list">View all diseases</a>
 
+      <!-- Search Locations -->
+      <h4>Locations</h4>
+      <input type="search" placeholder="Search locations..." onkeyup="filterTable('locationTable', this.value)">
+      <table id="locationTable">
+        <tbody>
+          <?php foreach (array_slice($locations, 0, 5) as $loc): ?>
+          <tr>
+            <td><?= htmlspecialchars($loc['country'] ?? '') ?></td>
+            <td><a href="<?= BASE_URL ?>/locations/edit/<?= $loc['id'] ?>">Edit</a></td>
+          </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+      <a href="<?= BASE_URL ?>/location_list">View all locations</a>
+    </aside>
 
-    <a href="<?= BASE_URL ?>/reports/<?= $report['id'] ?>/edit">Edit</a> |
+    <!-- Main Content (Reports) -->
+    <main class="grid-right">
+      <h2>Reports</h2>
+      <a href="<?= BASE_URL ?>/reports/create" class="btn">+ Create Report</a>
 
-    <form action="<?= BASE_URL ?>/reports/<?= $report['id'] ?>/delete" method="POST" style="display:inline;">
-        <button type="submit" onclick="return confirm('Delete this report?');">Delete</button>
-    </form>
-</li>
-
-            <?php endforeach; ?>
-        </ul>
-    <?php else: ?>
+      <?php if (!empty($reports)): ?>
+        <?php foreach ($reports as $report): ?>
+          <article class="report-card">
+            <h3><?= htmlspecialchars($report['disease_name']) ?></h3>
+            <p><strong>Location:</strong> <?= htmlspecialchars($report['country'] . ' ' . $report['level1']) ?></p>
+            <p><?= $Parsedown->text($report['content_md']) ?></p>
+            <a href="<?= BASE_URL ?>/reports/<?= $report['id'] ?>/edit">Edit</a> |
+            <form action="<?= BASE_URL ?>/reports/<?= $report['id'] ?>/delete" method="POST" style="display:inline;">
+              <button type="submit" class="btn btn-small" onclick="return confirm('Delete this report?');">Delete</button>
+            </form>
+          </article>
+        <?php endforeach; ?>
+      <?php else: ?>
         <p>No reports found.</p>
-    <?php endif; ?>
+      <?php endif; ?>
+    </main>
+  </div>
 </div>
-
-<?php 
-include __DIR__ . '/../views/partials/footer.php';
-?>
+<?php include __DIR__ . '/../views/partials/footer.php'; ?>
