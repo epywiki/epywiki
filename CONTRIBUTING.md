@@ -13,7 +13,7 @@ Thank you for your interest in contributing to **Epywiki**! This project is stil
 - **HTML, CSS, and JavaScript** for the frontend
 - Markdown support for notes and references
 
-The project currently focuses on **Kenya**, tracking diseases, cases, deaths, and epidemiological reports.
+The project currently focuses on **Africa**, tracking diseases, cases, deaths, and epidemiological reports.
 
 ---
 
@@ -32,7 +32,7 @@ Refer to `structure.md` for the complete file structure. Key directories include
 
 - `epywiki.sqlite` – The SQLite database file
 - `web.php` – Routing definitions
-- `install.php` – Initial installation script
+- `views/install_admin.php` – Initial installation script
 - `README.md` – Project documentation
 
 ---
@@ -76,10 +76,8 @@ Refer to `structure.md` for the complete file structure. Key directories include
 1. **Parsedown authors**  
    For creating and maintaining [`Parsedown.php`](https://github.com/erusev/parsedown) — a **single-file**, **dependency-free**, and **super-fast** Markdown parser written in PHP. It makes Markdown integration simple and elegant!
 
-2. **kenya-administrative-divisions author**  
-   I would like to extend my sincere appreciation to the developer who contributed the comprehensive dataset of Kenyan counties, subcounties, and wards in JSON format. This invaluable resource has significantly enhanced the accuracy and usability of our project. Your dedication to making this data freely available is deeply appreciated.  
-   You can explore the dataset here: [Kenya Administrative Divisions - county.json](https://github.com/michaelnjuguna/kenya-administrative-divisions/blob/main/county.json)
-
+2. **Bramus router author**  
+ 
 
 Thank you for helping make **Epywiki** better! Your contributions will help build a reliable, easy-to-use epidemiological wiki.
 
