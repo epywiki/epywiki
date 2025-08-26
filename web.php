@@ -46,6 +46,7 @@ $router->get('/delete_disease', 'delete_disease_page');
 // Locations
 $router->match('GET|POST', '/locations/add', 'add_location_page');
 $router->get('/locations/edit/(\d+)', 'edit_location_page');
+$router->get('/location_list', 'location_list_page');
 $router->post('/locations/update/(\d+)', 'update_location_action');
 $router->post('/locations/delete/(\d+)', 'delete_location_action');
 
@@ -75,3 +76,4 @@ $router->set404(function () {
     http_response_code(404);
     echo "404 - Page not found";
 });
+
