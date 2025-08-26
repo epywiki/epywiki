@@ -18,10 +18,10 @@ function add_disease() {
 
         if ($name) {
             if (add_disease_to_db($name, $description)) {
-                echo "<p>Disease added successfully!</p>";
+                set_flash_message("Disease added successfully", "success");
                 redirect(BASE_URL . '/home');
             } else {
-                echo "<p>Error: Could not add disease (maybe it already exists).</p>";
+                set_flash_message("Could not add disease (maybe it already exists)", "error");
             }
         } else {
             set_flash_message("Name is required.", "info");
@@ -63,7 +63,7 @@ function edit_disease_page() {
         }
     }
 
-    require __DIR__ . '/../views/disease/edit_disease.php';
+    require __DIR__ . '/../views/diseases/edit_disease.php';
 
 }
 

@@ -1,0 +1,94 @@
+/* =========================
+   Components: Buttons, Forms, Tables, Wiki Content
+   ========================= */
+
+/* Buttons */
+button, .btn {
+  background-color: var(--epy-green);
+  color: var(--text-light);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+
+}
+
+button:hover, .btn:hover {
+  background-color: #17a94a;
+}
+
+/* Forms */
+form {
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.4rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--epy-blue);
+  box-shadow: 0 0 0 2px rgba(34,113,177,0.2);
+  outline: none;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+th {
+  background: var(--epy-blue);
+  color: var(--text-light);
+}
+
+td {
+  border-top: 1px solid var(--border-color);
+}
+
+tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+tr:hover {
+  background: #f1f5f9;
+}
+
+/* Wiki Content */
+article h1, article h2, article h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+
+article p {
+  margin-bottom: 1rem;
+}
+
+/* Flash messages */
+.flash-message { padding: 10px; margin: 10px 0; border-radius: 4px; }
+.flash-success { background-color: #d4edda; color: #155724; }
+.flash-error   { background-color: #f8d7da; color: #721c24; }
+.flash-info    { background-color: #d1ecf1; color: #0c5460; }
+
+.flash-message .countdown {
+    font-size: 0.9em;
+    opacity: 0.7;
+    margin-left: 5px;
+}

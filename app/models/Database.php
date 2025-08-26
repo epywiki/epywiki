@@ -27,19 +27,14 @@ function create_tables() {
             description TEXT
         );
 
-        CREATE TABLE IF NOT EXISTS locations (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            country TEXT,
-            state TEXT,
-            county TEXT,
-            city TEXT,
-            name TEXT NOT NULL,
-            type TEXT NOT NULL,
-            parent_id INTEGER,
-            latitude REAL,
-            longitude REAL,
-            FOREIGN KEY (parent_id) REFERENCES locations(id)
-        );
+
+CREATE TABLE IF NOT EXISTS locations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    country TEXT NOT NULL,
+    level1 TEXT,
+    level2 TEXT,
+    level3 TEXT
+);
 
         -- Epidemiological reports (Markdown)
         CREATE TABLE IF NOT EXISTS reports (
