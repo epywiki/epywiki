@@ -40,8 +40,17 @@ $router->match('GET|POST', '/admin_dashboard', 'admin_dashboard_page');
 // Diseases
 $router->match('GET|POST', '/add_disease', 'add_disease');
 $router->get('/disease_list', 'disease_list_page');
-$router->match('GET|POST', '/edit_disease', 'edit_disease_page');
-$router->get('/delete_disease', 'delete_disease_page');
+$router->match('GET|POST', '/edit_disease/(\d+)', function($id) {
+    // Pass the $id to your controller function
+    $_GET['id'] = $id;  // So your existing edit_disease_page() still works
+    edit_disease_page();
+});
+
+$router->get('/delete_disease/(\d+)', function($id) {
+    $_GET['id'] = $id; // So your existing delete_disease_page() works
+    delete_disease_page();
+});
+
 
 // Locations
 $router->match('GET|POST', '/locations/add', 'add_location_page');
@@ -50,9 +59,6 @@ $router->get('/location_list', 'location_list_page');
 $router->post('/locations/update/(\d+)', 'update_location_action');
 $router->post('/locations/delete/(\d+)', 'delete_location_action');
 
-// Epi Data
-$router->match('GET|POST', '/add_epi_data', 'add_epi_data_page');
-$router->get('/edit_epi_data', 'edit_epi_data_page');
 
 // Markdown help
 $router->get('/markdown_help', function () {
@@ -76,4 +82,3 @@ $router->set404(function () {
     http_response_code(404);
     echo "404 - Page not found";
 });
-
