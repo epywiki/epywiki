@@ -13,7 +13,7 @@
 
 - The first user to set up the site becomes the **admin**.
 - Admins can add other users as **editors**.
-- Editors can add diseases and assign it to various wards in Kenya.
+- Editors can add diseases and assign them to various global administrative divisions.
 
 ### Login System
 
